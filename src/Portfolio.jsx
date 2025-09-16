@@ -139,22 +139,21 @@ const Portfolio = () => {
           <Typography
             variant="h2"
             component="h1"
-            className="text-white mb-4 font-bold"
+            className="text-white mb-4 pb-4 font-bold"
           >
             Haozhe Li
           </Typography>
-          <Typography variant="h5" className="text-gray-300 mb-6">
+          <Typography variant="h5" className="text-gray-300 pb-6 mb-6">
             3rd Year Computer Engineering Student @ UofT
           </Typography>
           <Typography
             variant="body1"
             align="center"
-            className="text-gray-400 mb-8"
+            className="text-gray-400 mb-8 pb-8"
             sx={{ textAlign: "center", maxWidth: "42rem", mx: "auto" }}
           >
             Passionate about creating innovative solutions through code.
-            Currently pursuing Computer Engineering with experience in
-            full-stack development, embedded systems, and algorithms.
+            Currently learning full-stack development, embedded systems, and algorithms.
           </Typography>
           <Box className="flex justify-center gap-4 mt-3">
             <Button
@@ -295,7 +294,7 @@ const Portfolio = () => {
         <Typography
           variant="h5"
           component="h2"
-          className="text-white mb-6 flex items-center"
+          className="text-white mb-6 pb-4 flex items-center"
         >
           <School className="mr-3" />
           Education
