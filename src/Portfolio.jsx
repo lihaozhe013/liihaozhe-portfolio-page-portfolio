@@ -20,6 +20,7 @@ import {
   Work,
   Code,
 } from "@mui/icons-material";
+import avatarImage from "./assets/avatar.jpg";
 
 const Portfolio = () => {
   const projects = [
@@ -104,7 +105,7 @@ const Portfolio = () => {
         <Box className="text-center mb-16">
           <Avatar
             sx={{ width: 150, height: 150, margin: "0 auto 2rem" }}
-            src="/src/assets/avatar.jpg"
+            src={avatarImage}
             alt="Haozhe Li"
           />
           <Typography
