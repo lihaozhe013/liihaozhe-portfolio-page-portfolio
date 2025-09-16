@@ -191,13 +191,13 @@ const Portfolio = () => {
 
         {/* Skills Section */}
         <Typography
-            variant="h5"
-            component="h2"
-            className="text-white mb-6 pb-4 flex items-center"
-          >
-            <Code className="mr-3" />
-            Technical Skills
-          </Typography>
+          variant="h5"
+          component="h2"
+          className="text-white mb-6 pb-4 flex items-center"
+        >
+          <Code className="mr-3" />
+          Technical Skills
+        </Typography>
         <Paper className="bg-slate-800 p-6 mb-10" sx={{ borderRadius: "20px" }}>
           <Box className="flex flex-wrap gap-2 mt-2">
             {skills.map((skill, index) => (
@@ -292,15 +292,15 @@ const Portfolio = () => {
         </Grid>
 
         {/* Education Section */}
+        <Typography
+          variant="h5"
+          component="h2"
+          className="text-white mb-6 flex items-center"
+        >
+          <School className="mr-3" />
+          Education
+        </Typography>
         <Paper className="bg-slate-800 p-8" sx={{ borderRadius: "20px" }}>
-          <Typography
-            variant="h5"
-            component="h2"
-            className="text-white mb-6 flex items-center"
-          >
-            <School className="mr-3" />
-            Education
-          </Typography>
           <Typography variant="h6" className="text-white mb-2">
             B.A.Sc in Computer Engineering
           </Typography>
