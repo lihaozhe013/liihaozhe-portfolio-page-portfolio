@@ -42,8 +42,16 @@ const Portfolio = () => {
         "AntD",
       ],
       links: [
-        { label: "GitHub", href: "https://github.com/lihaozhe013/myf-lightweight-ERP-system", type: "github" },
-        { label: "Demo", href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/simple-erp-system/", type: "external" },
+        {
+          label: "GitHub",
+          href: "https://github.com/lihaozhe013/myf-lightweight-ERP-system",
+          type: "github",
+        },
+        {
+          label: "Demo",
+          href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/simple-erp-system/",
+          type: "external",
+        },
       ],
     },
     {
@@ -57,11 +65,19 @@ const Portfolio = () => {
         "Algorithms",
         "Dijkstra",
         "A*",
-        "Greedy Algorithm"
+        "Greedy Algorithm",
       ],
       links: [
-        { label: "Presentation", href: "https://lihaozhe013.github.io/lihaozhe-portfolio/documents/ECE297-OP2.pdf", type: "external" },
-        { label: "Detail", href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece297-project/", type: "external" },
+        {
+          label: "Presentation",
+          href: "https://lihaozhe013.github.io/lihaozhe-portfolio/documents/ECE297-OP2.pdf",
+          type: "external",
+        },
+        {
+          label: "Detail",
+          href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece297-project/",
+          type: "external",
+        },
       ],
     },
     {
@@ -70,11 +86,18 @@ const Portfolio = () => {
         "An embedded systems project featuring a runner game implemented on RISC-V processor with custom graphics and input handling.",
       technologies: ["C", "RISC-V Assembly", "Embedded Systems"],
       links: [
-        { label: "GitHub", href: "https://github.com/lihaozhe013/ece243_runner_game", type: "github" },
-        { label: "Detail", href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece243-project-runner-game/", type: "external" },
+        {
+          label: "GitHub",
+          href: "https://github.com/lihaozhe013/ece243_runner_game",
+          type: "github",
+        },
+        {
+          label: "Detail",
+          href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece243-project-runner-game/",
+          type: "external",
+        },
       ],
     },
-
   ];
 
   const skills = [
@@ -104,7 +127,12 @@ const Portfolio = () => {
       <Container maxWidth="lg" className="py-20">
         <Box className="text-center mb-16">
           <Avatar
-            sx={{ width: 150, height: 150, margin: "0 auto 2rem" }}
+            sx={{
+              width: 150,
+              height: 150,
+              margin: "0 auto 2rem",
+              borderRadius: "20px",
+            }}
             src={avatarImage}
             alt="Haozhe Li"
           />
@@ -135,6 +163,7 @@ const Portfolio = () => {
               href="https://github.com/lihaozhe013"
               target="_blank"
               className="bg-indigo-600 hover:bg-indigo-700"
+              sx={{ borderRadius: "12px" }}
             >
               GitHub
             </Button>
@@ -144,6 +173,7 @@ const Portfolio = () => {
               href="https://linkedin.com/in/lihaozhe013"
               target="_blank"
               className="bg-blue-600 hover:bg-blue-700"
+              sx={{ borderRadius: "12px" }}
             >
               LinkedIn
             </Button>
@@ -152,6 +182,7 @@ const Portfolio = () => {
               startIcon={<Email />}
               href="mailto:lihaozhe013@gmail.com"
               className="border-gray-500 text-gray-300 hover:border-gray-400"
+              sx={{ borderRadius: "12px" }}
             >
               Email Me
             </Button>
@@ -159,21 +190,22 @@ const Portfolio = () => {
         </Box>
 
         {/* Skills Section */}
-        <Paper className="bg-slate-800 p-8 mb-10 rounded-lg">
-          <Typography
-            variant="h4"
+        <Typography
+            variant="h5"
             component="h2"
-            className="text-white mb-6 flex items-center"
+            className="text-white mb-6 pb-4 flex items-center"
           >
             <Code className="mr-3" />
             Technical Skills
           </Typography>
-          <Box className="flex flex-wrap gap-2 mt-4">
+        <Paper className="bg-slate-800 p-6 mb-10" sx={{ borderRadius: "20px" }}>
+          <Box className="flex flex-wrap gap-2 mt-2">
             {skills.map((skill, index) => (
               <Chip
                 key={index}
                 label={skill}
                 className="bg-indigo-600 text-white hover:bg-indigo-700"
+                sx={{ borderRadius: "12px" }}
               />
             ))}
           </Box>
@@ -181,7 +213,7 @@ const Portfolio = () => {
 
         {/* Projects Section */}
         <Typography
-          variant="h4"
+          variant="h5"
           component="h2"
           className="text-white mb-8 flex items-center"
         >
@@ -191,28 +223,32 @@ const Portfolio = () => {
         <Grid container spacing={4} className="mb-10 pt-4">
           {projects.map((project, index) => (
             <Grid item xs={12} md={6} lg={4} key={index}>
-              <Card className="h-full bg-slate-800 text-white">
-                <CardContent className="p-6">
+              <Card
+                className="h-full bg-slate-800 text-white"
+                sx={{ borderRadius: "16px" }}
+              >
+                <CardContent sx={{ padding: "2.5rem !important" }}>
                   <Typography
                     variant="h6"
                     component="h3"
-                    className="mb-3 font-semibold"
+                    className="mb-4 font-semibold"
                   >
                     {project.title}
                   </Typography>
                   <Typography
                     variant="body2"
-                    className="text-gray-300 mb-4 leading-relaxed"
+                    className="text-gray-300 mb-6 leading-relaxed"
                   >
                     {project.description}
                   </Typography>
-                  <Box className="mb-4 pt-4">
+                  <Box className="mb-6 pt-2">
                     {project.technologies.map((tech, techIndex) => (
                       <Chip
                         key={techIndex}
                         label={tech}
                         size="small"
                         className="mr-1 mb-1 bg-slate-700 text-gray-300"
+                        sx={{ borderRadius: "10px" }}
                       />
                     ))}
                   </Box>
@@ -243,6 +279,7 @@ const Portfolio = () => {
                             ? "text-indigo-400 hover:text-indigo-300"
                             : "text-amber-400 hover:text-amber-300"
                         }
+                        sx={{ borderRadius: "10px" }}
                       >
                         {link.label}
                       </Button>
@@ -255,9 +292,9 @@ const Portfolio = () => {
         </Grid>
 
         {/* Education Section */}
-        <Paper className="bg-slate-800 p-8 rounded-lg">
+        <Paper className="bg-slate-800 p-8" sx={{ borderRadius: "20px" }}>
           <Typography
-            variant="h4"
+            variant="h5"
             component="h2"
             className="text-white mb-6 flex items-center"
           >
@@ -272,7 +309,8 @@ const Portfolio = () => {
           </Typography>
           <Typography variant="body2" className="text-gray-300">
             Relevant Coursework: Algorithms and Data Structures, Computer
-            Organization, Communication Systems, Digital Systems, Introductory Electronics
+            Organization, Communication Systems, Digital Systems, Introductory
+            Electronics
           </Typography>
         </Paper>
       </Container>
