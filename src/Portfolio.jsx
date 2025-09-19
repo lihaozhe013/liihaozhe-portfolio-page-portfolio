@@ -21,6 +21,7 @@ import {
   School,
   Work,
   Code,
+  Home
 } from "@mui/icons-material";
 import { DarkMode, LightMode } from '@mui/icons-material'
 import { useColorMode } from './App'
@@ -253,7 +254,16 @@ const Portfolio = () => {
               LinkedIn
             </Button>
             <Button
-              variant="outlined"
+              variant="contained"
+              startIcon={<Home />}
+              href="https://lihaozhe013.github.io/lihaozhe-website/"
+              className="border-gray-400 text-slate-700 dark:border-gray-500 dark:text-gray-300 hover:border-gray-500 dark:hover:border-gray-400"
+              sx={{ borderRadius: "12px" }}
+            >
+              My Website
+            </Button>
+            <Button
+              variant="contained"
               startIcon={<Email />}
               href="mailto:lihaozhe013@gmail.com"
               className="border-gray-400 text-slate-700 dark:border-gray-500 dark:text-gray-300 hover:border-gray-500 dark:hover:border-gray-400"
