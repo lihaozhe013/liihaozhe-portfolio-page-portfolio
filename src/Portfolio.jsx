@@ -187,7 +187,7 @@ const Portfolio = () => {
     <div className="min-h-screen transition-colors bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
       {/* Color Mode Toggle */}
       <Box className="fixed top-4 right-4 z-50">
-        <Tooltip title={mode === 'dark' ? '切换到亮色模式' : '切换到暗色模式'}>
+        <Tooltip title={mode === 'dark' ? 'Toggle Light Mode' : 'Toggle Dark Mode'}>
           <IconButton
             onClick={toggleColorMode}
             aria-label="toggle color mode"
