@@ -10,6 +10,8 @@ import {
   Button,
   Avatar,
   Paper,
+  IconButton,
+  Tooltip,
 } from "@mui/material";
 import {
   GitHub,
@@ -20,6 +22,8 @@ import {
   Work,
   Code,
 } from "@mui/icons-material";
+import { DarkMode, LightMode } from '@mui/icons-material'
+import { useColorMode } from './App'
 import avatarImage from "./assets/avatar.jpg";
 
 const Portfolio = () => {
@@ -176,8 +180,24 @@ const Portfolio = () => {
     "AntD",
   ];
 
+  const { mode, toggleColorMode } = useColorMode()
+
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen transition-colors bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+      {/* Color Mode Toggle */}
+      <Box className="fixed top-4 right-4 z-50">
+        <Tooltip title={mode === 'dark' ? '切换到亮色模式' : '切换到暗色模式'}>
+          <IconButton
+            onClick={toggleColorMode}
+            aria-label="toggle color mode"
+            size="medium"
+            className="backdrop-blur bg-white/70 dark:bg-slate-800/70 hover:bg-white dark:hover:bg-slate-700 shadow ring-1 ring-black/5 dark:ring-white/10"
+            sx={{ borderRadius: '14px' }}
+          >
+            {mode === 'dark' ? <LightMode fontSize="small" /> : <DarkMode fontSize="small" />}
+          </IconButton>
+        </Tooltip>
+      </Box>
       {/* Hero Section */}
       <Container maxWidth="lg" className="py-20">
         <Box className="text-center mb-16">
@@ -194,17 +214,17 @@ const Portfolio = () => {
           <Typography
             variant="h2"
             component="h1"
-            className="text-white mb-4 pb-4 font-bold"
+            className="mb-4 pb-4 font-bold text-slate-900 dark:text-white"
           >
             Haozhe Li
           </Typography>
-          <Typography variant="h5" className="text-gray-300 pb-6 mb-6">
+          <Typography variant="h5" className="pb-6 mb-6 text-slate-600 dark:text-gray-300">
             3rd Year Computer Engineering Student @ UofT
           </Typography>
           <Typography
             variant="body1"
             align="center"
-            className="text-gray-400 mb-8 pb-8"
+            className="mb-8 pb-8 text-slate-600 dark:text-gray-400"
             sx={{ textAlign: "center", maxWidth: "42rem", mx: "auto" }}
           >
             Passionate about creating innovative solutions through code.
@@ -236,7 +256,7 @@ const Portfolio = () => {
               variant="outlined"
               startIcon={<Email />}
               href="mailto:lihaozhe013@gmail.com"
-              className="border-gray-500 text-gray-300 hover:border-gray-400"
+              className="border-gray-400 text-slate-700 dark:border-gray-500 dark:text-gray-300 hover:border-gray-500 dark:hover:border-gray-400"
               sx={{ borderRadius: "12px" }}
             >
               Email Me
@@ -245,15 +265,11 @@ const Portfolio = () => {
         </Box>
 
         {/* Skills Section */}
-        <Typography
-          variant="h5"
-          component="h2"
-          className="text-white mb-6 pb-4 flex items-center"
-        >
+        <Typography variant="h5" component="h2" className="mb-6 pb-4 flex items-center text-slate-900 dark:text-white">
           <Code className="mr-3" />
           Technical Skills
         </Typography>
-        <Paper className="bg-slate-800 p-6 mb-10" sx={{ borderRadius: "20px" }}>
+        <Paper className="p-6 mb-10 bg-white dark:bg-slate-800" sx={{ borderRadius: "20px" }}>
           <Box className="flex flex-wrap gap-2 mt-2">
             {skills.map((skill, index) => (
               <Chip
@@ -267,11 +283,7 @@ const Portfolio = () => {
         </Paper>
 
         {/* Projects Section */}
-        <Typography
-          variant="h5"
-          component="h2"
-          className="text-white mb-8 flex items-center"
-        >
+        <Typography variant="h5" component="h2" className="mb-8 flex items-center text-slate-900 dark:text-white">
           <Work className="mr-3" />
           Featured Projects
         </Typography>
@@ -279,7 +291,7 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Grid item xs={12} md={6} lg={4} key={index}>
               <Card
-                className="h-full bg-slate-800 text-white"
+                className="h-full bg-yellow-50 text-slate-800 dark:bg-slate-800 dark:text-white transition-colors"
                 sx={{ borderRadius: "16px" }}
               >
                 <CardContent sx={{ padding: "2.5rem !important" }}>
@@ -292,7 +304,7 @@ const Portfolio = () => {
                   </Typography>
                   <Typography
                     variant="body2"
-                    className="text-gray-300 mb-6 pb-6 leading-relaxed"
+                    className="mb-6 pb-6 leading-relaxed text-slate-600 dark:text-gray-300"
                   >
                     {project.description}
                   </Typography>
@@ -302,7 +314,7 @@ const Portfolio = () => {
                         key={techIndex}
                         label={tech}
                         size="small"
-                        className="mr-1 mb-2 bg-slate-700 text-gray-300"
+                        className="mr-1 mb-2 bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-gray-300"
                         sx={{ borderRadius: "10px" }}
                       />
                     ))}
@@ -331,8 +343,8 @@ const Portfolio = () => {
                         href={link.href}
                         className={
                           link.type === "github"
-                            ? "text-indigo-400 hover:text-indigo-300"
-                            : "text-amber-400 hover:text-amber-300"
+                            ? "text-indigo-600 hover:text-amber-500 dark:text-indigo-400 dark:hover:text-amber-300"
+                            : "text-amber-600 hover:text-amber-500 dark:text-indigo-400 dark:hover:text-amber-300"
                         }
                         sx={{ borderRadius: "10px" }}
                       >
@@ -347,22 +359,18 @@ const Portfolio = () => {
         </Grid>
 
         {/* Education Section */}
-        <Typography
-          variant="h5"
-          component="h2"
-          className="text-white mb-6 pb-4 flex items-center"
-        >
+        <Typography variant="h5" component="h2" className="mb-6 pb-4 flex items-center text-slate-900 dark:text-white">
           <School className="mr-3" />
           Education
         </Typography>
-        <Paper className="bg-slate-800 p-8" sx={{ borderRadius: "20px" }}>
-          <Typography variant="h6" className="text-white mb-2">
+        <Paper className="p-8 bg-white dark:bg-slate-800" sx={{ borderRadius: "20px" }}>
+          <Typography variant="h6" className="mb-2 text-slate-900 dark:text-white">
             B.A.Sc in Computer Engineering
           </Typography>
-          <Typography variant="body1" className="text-indigo-400 pb-4">
+          <Typography variant="body1" className="pb-4 text-indigo-600 dark:text-indigo-400">
             University of Toronto
           </Typography>
-          <Typography variant="body2" className="text-gray-300">
+          <Typography variant="body2" className="text-slate-600 dark:text-gray-300">
             Relevant Coursework: Algorithms and Data Structures, Computer
             Organization, Communication Systems, Digital Systems, Introductory
             Electronics
