@@ -55,7 +55,36 @@ const Portfolio = () => {
       ],
     },
     {
-      title: "ECE297 Project - GIS Mapping System",
+      title: "Simple Web Server",
+      description:
+        "An lightweight, database-free static resource hosting server supporting markdown, video/audio playback, webpage hosting, private link generation, file upload, and search functionality",
+      technologies: [
+        "Go",
+        "Gin",
+        "Node.js",
+        "Express",
+        "Multer",
+        "Rust",
+        "Video.js",
+        "Tailwind CSS",
+        "HTML",
+        "JavaScript"
+      ],
+      links: [
+        {
+          label: "GitHub (Go Version)",
+          href: "https://github.com/lihaozhe013/simple-server-go",
+          type: "github",
+        },
+        {
+          label: "Github (Node.js Version)",
+          href: "https://github.com/lihaozhe013/simple-server-nodejs",
+          type: "github",
+        },
+      ],
+    },
+    {
+      title: "GIS Mapping System - ECE297 Project",
       description:
         "A comprehensive Geographic Information System built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
       technologies: [
@@ -81,7 +110,7 @@ const Portfolio = () => {
       ],
     },
     {
-      title: "ECE243 Runner Game",
+      title: "Runner Game - ECE243 Project",
       description:
         "An embedded systems project featuring a runner game implemented on RISC-V processor with custom graphics and input handling.",
       technologies: ["C", "RISC-V Assembly", "Embedded Systems"],
@@ -95,6 +124,32 @@ const Portfolio = () => {
           label: "Detail",
           href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece243-project-runner-game/",
           type: "external",
+        },
+      ],
+    },
+    {
+      title: "Greedy Mouse Game - ECE241 Project",
+      description:
+        "An embedded systems project featuring a runner game implemented on FPGA board with custom graphics and input handling.",
+      technologies: ["Verilog", "Embedded Systems", "Quartus Prime", "ModelSim", "DE1-SoC FPGA Board"],
+      links: [
+        {
+          label: "Presentation Slides",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ece241-final-presentation.pdf",
+          type: "external",
+        },
+      ],
+    },
+    {
+      title: "Git Snapshot Tool",
+      description:
+        "A tool with GUI that can auto fetch, pull, commit and push markdown notes to github with one click.",
+      technologies: ["Tauri", "Rust", "JavaScript"],
+      links: [
+        {
+          label: "Github",
+          href: "https://github.com/lihaozhe013/git-snapshot-tauri",
+          type: "github",
         },
       ],
     },
@@ -153,7 +208,8 @@ const Portfolio = () => {
             sx={{ textAlign: "center", maxWidth: "42rem", mx: "auto" }}
           >
             Passionate about creating innovative solutions through code.
-            Currently learning full-stack development, embedded systems, and algorithms.
+            Currently learning full-stack development, embedded systems, and
+            algorithms.
           </Typography>
           <Box className="flex justify-center gap-4 mt-3">
             <Button
@@ -230,13 +286,13 @@ const Portfolio = () => {
                   <Typography
                     variant="h6"
                     component="h3"
-                    className="mb-4 font-semibold"
+                    className="mb-4 pb-4 font-semibold"
                   >
                     {project.title}
                   </Typography>
                   <Typography
                     variant="body2"
-                    className="text-gray-300 mb-6 leading-relaxed"
+                    className="text-gray-300 mb-6 pb-6 leading-relaxed"
                   >
                     {project.description}
                   </Typography>
@@ -246,7 +302,7 @@ const Portfolio = () => {
                         key={techIndex}
                         label={tech}
                         size="small"
-                        className="mr-1 mb-1 bg-slate-700 text-gray-300"
+                        className="mr-1 mb-2 bg-slate-700 text-gray-300"
                         sx={{ borderRadius: "10px" }}
                       />
                     ))}
@@ -303,7 +359,7 @@ const Portfolio = () => {
           <Typography variant="h6" className="text-white mb-2">
             B.A.Sc in Computer Engineering
           </Typography>
-          <Typography variant="body1" className="text-indigo-400 mb-2">
+          <Typography variant="body1" className="text-indigo-400 pb-4">
             University of Toronto
           </Typography>
           <Typography variant="body2" className="text-gray-300">
