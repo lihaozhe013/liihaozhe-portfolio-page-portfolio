@@ -89,7 +89,7 @@ const Portfolio = () => {
       ],
     },
     {
-      title: "GIS Mapping System - ECE297 Project",
+      title: "GIS Route Optimization Application - ECE297 Project",
       description:
         "A comprehensive Geographic Information System built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
       technologies: [
