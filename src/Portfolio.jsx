@@ -54,7 +54,7 @@ const Portfolio = () => {
         },
         {
           label: "Demo",
-          href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/simple-erp-system/",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/simple-erp-system/",
           type: "external",
         },
       ],
@@ -104,12 +104,12 @@ const Portfolio = () => {
       links: [
         {
           label: "Presentation",
-          href: "https://lihaozhe013.github.io/lihaozhe-portfolio/documents/ECE297-OP2.pdf",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE297-OP2.pdf",
           type: "external",
         },
         {
           label: "Detail",
-          href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece297-project/",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/gis-route-optimization-application-ece297-course-project/",
           type: "external",
         },
       ],
@@ -127,7 +127,7 @@ const Portfolio = () => {
         },
         {
           label: "Detail",
-          href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece243-project-runner-game/",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/runner-game-ece243-project/",
           type: "external",
         },
       ],
